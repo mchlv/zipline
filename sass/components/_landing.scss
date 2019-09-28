@@ -1,0 +1,143 @@
+.container-fluid {
+  background: $green;
+}
+
+.register {
+  background: $green;
+  .formWrapper {
+    background: rgba(254, 194, 59, 0.8);
+    width: 500px;
+    position: absolute;
+    top: 110px;
+    right: 580px;
+    padding: 30px;
+    padding-bottom: 10px;
+    border-radius: 40px;
+    height: 640px;
+    z-index: 1000;
+  }
+}
+
+.loginSec {
+  padding-left: 500px;
+  .login {
+    background: $green;
+    position: relative;
+    .formWrapper {
+      background: rgba(254, 194, 59, 1);
+      width: 600px;
+      padding: 50px;
+      border-radius: 40px;
+      height: 350px;
+      z-index: 1000;
+      display: inline-block;
+      position: absolute;
+      left: 190px;
+      input[type="submit"] {
+        margin: 10px;
+      }
+      p,
+      a {
+        display: inline-block;
+        float: right;
+        padding: 2px;
+      }
+    }
+    img {
+      max-width: 55%;
+      max-height: 55%;
+      display: block;
+      padding-left: 50px;
+      padding-bottom: 60px;
+    }
+  }
+}
+
+.login,
+.register {
+  h1 {
+    font-weight: 700;
+    line-height: 10px;
+    padding-bottom: 20px;
+  }
+  form {
+    width: 90%;
+    z-index: 50000;
+    padding: 10px;
+    padding-bottom: 5px;
+    input[type="text"],
+    input[type="password"],
+    textarea {
+      margin-top: 1px;
+      padding: 7px;
+      border-style: none;
+      background-color: white;
+      width: 100%;
+      font-size: 16px;
+      border-radius: 30px;
+    }
+    input[type="file"] {
+      padding-top: 10px;
+      padding-bottom: 20px;
+      border-style: none;
+      background: transparent;
+      font-weight: 700;
+      border-radius: 10px;
+    }
+    label {
+      font-size: 22px;
+      font-weight: 700;
+    }
+    p {
+      font-size: 9px;
+    }
+  }
+}
+span {
+  float: right;
+
+  p {
+    font-size: 14px;
+    display: inline-block;
+    top: 0;
+  }
+  a {
+    font-size: 16px;
+    color: $darkblue;
+    display: inline-block;
+    &:hover {
+    }
+  }
+}
+
+#heroWords {
+  position: absolute;
+  top: 360px;
+  left: 360px;
+  h1 {
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 40px;
+  }
+}
+
+.homeWrapper {
+  // margin-top: -10px;
+  background-color: #829339;
+  width: 100%;
+  height: 700px;
+  margin: 0 auto;
+  .homeInfo {
+    margin-top: 50px;
+    margin: 0 auto;
+    float: left;
+    padding: 30px;
+    text-align: center;
+    z-index: 1;
+    i {
+      font-size: 50px;
+      padding: 30px;
+    }
+  }
+}

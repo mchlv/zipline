@@ -1,0 +1,43 @@
+.goatlisting {
+  padding: 50px;
+  .goat {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+    margin: 40px;
+    // height: 25%;
+    // width: 25%;
+    background-color: rgba(254, 194, 59, 0.8);
+    float: left;
+    border-radius: 200px;
+    a {
+      margin: 0 auto;
+      img {
+        width: 100%;
+        height: 100%;
+        margin: 20px;
+        border-radius: 30px;
+        transition: transform 1s ease;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+      .goatName {
+        margin-left: 40px;
+        float: left;
+        font-size: 60px;
+        font-weight: 700;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+.pager {
+  font-size: 50px;
+  font-weight: 700;
+  margin-top: 20%;
+  a {
+    text-decoration: none;
+  }
+}
