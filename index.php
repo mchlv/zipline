@@ -115,47 +115,49 @@
       <div class="row">
         <div class="col-lg-12">
         <h2>Apply here!</h2>
-          <div class="form">
-            <form action="" method="post">
-              <input type="text" name="firstName" id="first" placeholder="First Name">
-              <input type="text" name="lastName" id="" placeholder="Last Name">
-              <input type="text" name="email" id="" placeholder="Email Address">
-              <select name="Position" id="position">
+          <?php
+            if (isset($_GET["success"]))
+            {
+              ?>
+              <p class="msg success">Thank you for your application!</p>
+              <?php
+            }
+          ?>
+          <div class="appForm">
+            <form action="verify.php" method="post">
+              <input type="text" name="strFirstName" id="first" placeholder="First Name">
+              <input type="text" name="strLastName" id="" placeholder="Last Name">
+              <input type="text" name="strEmail" id="" placeholder="Email Address">
+              <select name="strPosition" id="position">
                 <option value="">Zipline Guide</option>
                 <option value="">Aerial Park Rescue Guide</option>
                 <option value="">Kiosk Attendant</option>
               </select>
               <h3>Season Available</h3>
-              <label for="summer">Summer</label>
-              <input type="checkbox" name="summer" id="summer">
-
-              <label for="fall">Fall</label>
-              <input type="checkbox" name="fall" id="fall">
-
-              <label for="winter">Winter</label>
-              <input type="checkbox" name="winter" id="winter">
-
-              <label for="spring">Spring</label>
-              <input type="checkbox" name="spring" id="spring">
+              <label>Summer</label>
+              <input type="checkbox" name="arrSeason[]" value="Summer" id="season">
+              <label>Fall</label>
+              <input type="checkbox" name="arrSeason[]" value="Fall" id="season">
+              <label>Winter</label>
+              <input type="checkbox" name="arrSeason[]" value="Winter" id="season">
+              <label>Spring</label>
+              <input type="checkbox" name="arrSeason[]" value="Spring" id="season">
               
               <h3>Hours Available</h3>
-              <label for="mornings">Mornings</label>
-              <input type="checkbox" name="mornings" id="mornings">
+              <label>Morning</label>
+              <input type="checkbox" name="arrHours[]" value="Morning" id="hours">
+              <label>Afternoon</label>
+              <input type="checkbox" name="arrHours[]" value="Afternoon" id="hours">
+              <label>Evening</label>
+              <input type="checkbox" name="arrHours[]" value="Evening" id="hours">
+              <label>Weekends Only</label>
+              <input type="checkbox" name="arrHours[]" value="Weekend" id="hours">
 
-              <label for="afternoons">Afternoons</label>
-              <input type="checkbox" name="afternoons" id="afternoons">
-
-              <label for="evenings">Evenings</label>
-              <input type="checkbox" name="evenings" id="evenings">
-
-              <label for="anytime">Weekends Only</label>
-              <input type="checkbox" name="weekends" id="weekends">
-
-              <!-- <img src="../assets/<?=$arrPage['strImage']?>" width=100>    : code to show image that was uploaded ... use for admin side -->
+            
+              <!-- <img src="../assets/<?=['strImage']?>" width=100>    : code to show image that was uploaded ... use for admin side -->
               <input type="file" name="strImage"> <br/>
 
-              <input type="submit" value="Submit">
-
+              <input type="submit" name="submit" value="Submit">
             </form>
           </div>
         </div>
@@ -165,9 +167,6 @@
     <footer>
 
     </footer>
-
-
-
 
   </div> <!-- page container end -->
 
