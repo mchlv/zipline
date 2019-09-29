@@ -125,15 +125,17 @@
           ?>
           <div class="appForm">
             <form action="verify.php" method="post">
-              <input type="text" name="strFirstName" id="first" placeholder="First Name">
-              <input type="text" name="strLastName" id="" placeholder="Last Name">
+              <input type="text" name="firstname" id="first" placeholder="First Name">
+              <input type="text" name="lastname" id="" placeholder="Last Name">
               <input type="text" name="strEmail" id="" placeholder="Email Address">
-              <select name="strPosition" id="position">
-                <option value="">Zipline Guide</option>
-                <option value="">Aerial Park Rescue Guide</option>
-                <option value="">Kiosk Attendant</option>
+              <select name="position" id="position">
+                <option value="Zipline Guide">Zipline Guide</option>
+                <option value="Aerial Park Rescue Guide">Aerial Park Rescue Guide</option>
+                <option value="Kiosk Attendant">Kiosk Attendant</option>
               </select>
-              <h3>Season Available</h3>
+
+              
+              <!-- <h3>Season Available</h3>
               <label>Summer</label>
               <input type="checkbox" name="arrSeason[]" value="Summer" id="season">
               <label>Fall</label>
@@ -151,7 +153,7 @@
               <label>Evening</label>
               <input type="checkbox" name="arrHours[]" value="Evening" id="hours">
               <label>Weekends Only</label>
-              <input type="checkbox" name="arrHours[]" value="Weekend" id="hours">
+              <input type="checkbox" name="arrHours[]" value="Weekend" id="hours"> -->
 
             
               <!-- <img src="../assets/<?=['strImage']?>" width=100>    : code to show image that was uploaded ... use for admin side -->

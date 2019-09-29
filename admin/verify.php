@@ -1,6 +1,6 @@
 <?php
 
-// include("../Classes/Db.php");
+include("../Classes/Db.php");
 
 $con = mysqli_connect("localhost", "root", "", "zipline");
 
