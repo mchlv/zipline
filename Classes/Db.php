@@ -1,35 +1,4 @@
 <?php
-Class ConnectToDB {
-  var $connect;
-  public function __construct($connect){
-      $this->con = $connect;
-  }
-  public static function con() {
-    $connect = mysqli_connect("localhost", "root", "", "zipline");
-    return $connect;
-
-    $oDb = new ConnectToDB($connect);
-    return $oDb;
-
-    if($con->connect_error)
-    {
-      die("Connection failed: " . $con->connect_error);
-    } else
-    {
-      echo "Connected Successfully!";
-    }
-  }
-  public static function query(){
-    $result = mysqli_query($this->con, $sql);
-    return $result;
-  }
-}
-
-
-?>
-
-
-<!-- <?php
 Class Database
 {
   var $con;
@@ -45,9 +14,9 @@ Class Database
     // $connect = mysqli_connect($ini["host"], $ini["user"], $ini["pass"], $ini["db"]); use when uploading to server
 
     $con = mysqli_connect("localhost", "root", "", "zipline");
-    return $connect;
+    return $con;
 
-    $oDatabase = new Db($con);
+    $oDatabase = new Database($con);
     return $oDatabase;
   }
 
@@ -58,4 +27,4 @@ Class Database
 
 
 }
-?> -->
+?>
