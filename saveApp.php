@@ -7,30 +7,22 @@ include("Classes/Functions.php");
 
 $con = Database::con();
 
-if(isset($_POST['submit']))
-{
-      $seasonsarray = $_POST["arrSeason"];
-      $newvalues = implode(" ", $seasonsarray);
-      
-      $oFunctions = new Functions();
-      $Functions->insertCheckbox($newvalues);
-
-}
-
-print_r($_POST["arrSeason"]);
-
+$seasonarr = $_POST["arrSeason"];
+$newvalues = implode(",", $seasonarr);
 
 $statement = $con->prepare("INSERT INTO applicants (
       strFirstName,
       strLastName,
-      strEmail
+      strEmail,
+      nSeasonID
       )
     VALUES (
       '".$_POST['firstname']."',
       '".$_POST['lastname']."',
-      '".$_POST['email']."')");
+      '".$_POST['email']."',
+      '$newvalues')");
 
-    $statement->bind_param("sss", $first, $last, $email);
+    $statement->bind_param("ssss", $first, $last, $email, $newvalues);
 
     $first = ($_POST['firstname']);
     $last = ($_POST['lastname']);
