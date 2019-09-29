@@ -10,12 +10,15 @@ $con = Database::con();
 if(isset($_POST['submit']))
 {
       $seasonsarray = $_POST["arrSeason"];
-      $newvalues = implode(",", $seasonsarray);
+      $newvalues = implode(" ", $seasonsarray);
       
       $oFunctions = new Functions();
       $Functions->insertCheckbox($newvalues);
 
 }
+
+print_r($_POST["arrSeason"]);
+
 
 $statement = $con->prepare("INSERT INTO applicants (
       strFirstName,
@@ -38,5 +41,5 @@ $statement = $con->prepare("INSERT INTO applicants (
 
     Functions::insertData($sql);
 
-    header("location: index.php?success=savedApplication");
+    // header("location: index.php?success=savedApplication");
 ?>
