@@ -124,17 +124,17 @@
             }
           ?>
           <div class="appForm">
-            <form action="saveApp.php" method="post">
+            <form action="saveApp.php" method="post" enctype="multipart/form-data">
               <input type="text" name="firstname" id="first" placeholder="First Name">
               <input type="text" name="lastname" id="last" placeholder="Last Name">
               <input type="text" name="email" id="email" placeholder="Email Address">
           
           
-              <!-- <select name="position" id="position">
+              <select name="position" id="position">
                 <option value="Zipline Guide">Zipline Guide</option>
                 <option value="Aerial Park Rescue Guide">Aerial Park Rescue Guide</option>
                 <option value="Kiosk Attendant">Kiosk Attendant</option>
-              </select> -->
+              </select>
 
               
               <h3>Season Available</h3>
@@ -147,7 +147,7 @@
               <label>Spring</label>
               <input type="checkbox" name="arrSeason[]" value="Spring" id="season">
               
-              <!-- <h3>Hours Available</h3>
+              <h3>Hours Available</h3>
               <label>Morning</label>
               <input type="checkbox" name="arrHours[]" value="Morning" id="hours">
               <label>Afternoon</label>
@@ -155,11 +155,11 @@
               <label>Evening</label>
               <input type="checkbox" name="arrHours[]" value="Evening" id="hours">
               <label>Weekends Only</label>
-              <input type="checkbox" name="arrHours[]" value="Weekend" id="hours"> -->
+              <input type="checkbox" name="arrHours[]" value="Weekend" id="hours">
 
             
               <!-- <img src="../assets/<?=['strImage']?>" width=100>    : code to show image that was uploaded ... use for admin side -->
-              <!-- <input type="file" name="strImage"> <br/> -->
+              <input type="file" name="photo"> <br/>
 
               <input type="submit" name="submit" value="Submit">
             </form>

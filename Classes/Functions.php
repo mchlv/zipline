@@ -36,47 +36,58 @@ Class Functions extends Database
     return $data;
   }
 
-  
-  static function showTableHeader($arrFields){
-    ?>
-    <div class="container">
-      <div class="thead row">
-      <?php
-      $sort = !empty($_GET["sort"]) ? $_GET['sort']:'';
-        foreach($arrFields as $fieldName){            
-          $active = ($fieldName == $sort)?'active':'';
-          ?>
-          <div class="chead col-sm-3 col-md-3 col-lg-1 <?=$active?>">
-            <a href="?sort=<?=$fieldName?>"><?=$fieldName?></a>
-          </div>
-          <?php 
-        }
-        ?>
-          <div class="chead col-sm-3 col-md-3 col-lg-1">Delete</div>
-        </div>
-      </div>
-    <?php
-  }
-  
   static function showData($sql, $arrFields){
     $result = self::outputData($sql);
     if(!empty($result)){
-      foreach($result as $user){
+      foreach($result as $applicant){
       ?>
-      <div class="trow col-sm-12 col-md-12 col-lg-12 row">
-      <?php   
-        foreach($user as $fieldName => $fieldValue){
-          if($fieldName != 'id'){
-            ?>
-            <div class="info col-sm-3 col-md-3 col-lg-1">
-              <?=($fieldName=='utcDatems')?gmdate('d M Y', $fieldValue):$fieldValue;?>
+
+      <div class="panel-group container" id="accordion">
+        <div class="panel panel-default row">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?=$applicant['id'];?>">
+                  
+
+          <div>
+          <?php   
+            foreach($applicant as $fieldName => $fieldValue){
+              if($fieldName == 'strFirstName' and 'strLastName'){
+          ?>
+
+
+          <div class="info">
+            <?=$fieldValue;?></a>
+          </h4>
+        </div>
+      </div>
+    
+    
+            <?php
+              foreach($applicant as $fieldName => $fieldValue){
+                if($fieldName != 'id')
+            {?>
+
+            <div id="collapse<?=$applicant['id'];?>" class="panel-collapse collapse in">
+    
+                
+            <div class="panel-body"><b><?=$fieldName;?></b> <?=$fieldValue;?>
+            
             </div>
+            </div>
+
+              <?php
+                      
+                  }
+                }
+
+                  ?>
             <?php 
           }
         }
         ?>
-        <div class="del col-sm-3 col-md-3 col-lg-1">
-            <a href="../admin/delete.php?id=<?=$user["id"]?>"><i class="far fa-trash-alt"></i></a>
+        <div class="delete col-sm-3 col-md-3 col-lg-1">
+            <a href="../admin/delete.php?id=<?=$applicant["id"]?>"><i class="far fa-trash-alt"></i></a></div>
         </div>
       </div>
       <?php
