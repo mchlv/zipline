@@ -6,7 +6,7 @@ Class Database
   public function __construct($con)
   {
     $this->con = $con;
-  }
+  } // run connection automatically
 
   public static function con()
   {
@@ -18,13 +18,6 @@ Class Database
 
     $oDatabase = new Database($con);
     return $oDatabase;
-  }
-
-  public static function query(){
-    $result = mysqli_query($this->con, $sql);
-    return $result;
-  }
-
-
+  } // connect to db using ini file for security
 }
 ?>
