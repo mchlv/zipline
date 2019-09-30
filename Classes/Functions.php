@@ -38,6 +38,7 @@ Class Functions extends Database
 
   static function showData($sql, $arrFields){
     $result = self::outputData($sql);
+    $sort = !empty($_GET["sort"]) ? $_GET['sort']:'';
     if(!empty($result)){
       foreach($result as $applicant){
       ?>
@@ -47,19 +48,19 @@ Class Functions extends Database
           <div class="panel-heading">
             <h4 class="panel-title">
               <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?=$applicant['id'];?>">
-                  
-
-          <div>
+         
           <?php   
             foreach($applicant as $fieldName => $fieldValue){
-              if($fieldName == 'strFirstName' and 'strLastName'){
+              if($fieldName == 'strFirstName')
+              {
           ?>
 
-
+          
           <div class="info">
-            <?=$fieldValue;?></a>
-          </h4>
-        </div>
+            <?=$fieldValue;?></div>
+          </h4></a> <a href="../admin/delete.php?id=<?=$applicant["id"]?>"><i class="far fa-trash-alt"></i></a> 
+            <a href="mailto:"><i class="far fa-envelope"></i></a> 
+          </div>
       </div>
     
     
@@ -71,8 +72,10 @@ Class Functions extends Database
             <div id="collapse<?=$applicant['id'];?>" class="panel-collapse collapse in">
     
                 
-            <div class="panel-body"><b><?=$fieldName;?></b> <?=$fieldValue;?>
-            
+            <table>
+              <div class="panel-body th"><b><?=$fieldName;?></b>
+              <div class="td"></div><?=$fieldValue;?>
+            </table>
             </div>
             </div>
 
@@ -86,15 +89,21 @@ Class Functions extends Database
           }
         }
         ?>
-        <div class="delete col-sm-3 col-md-3 col-lg-1">
-            <a href="../admin/delete.php?id=<?=$applicant["id"]?>"><i class="far fa-trash-alt"></i></a></div>
-        </div>
+       
       </div>
       <?php
       }
     } else {
       echo '<h2>There are no applicants.</h2>';
     }
+  }
+
+  public static function sortData()
+  {
+    // sort stuff
+    $orderByField = (isset($_GET['orderByField'])) ? $_GET['orderByField'] : "strFirstName";
+    //defining varaiable
+    $strNameSorted = ($orderByField == "strFirstName")?"sorted":"";
   }
 }
 ?>

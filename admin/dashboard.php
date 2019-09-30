@@ -24,67 +24,65 @@ if (isset($_GET["success"]))
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script> <!-- jquery -->
 
+<script src="js/filter.js"></script>
   
   <link rel="stylesheet" href="../css/main.css"> <!-- compiled css -->
 </head>
 <body class="dash">
   <div class="mainContainer">
-    <div class="container-fluid">
+    <div class="container">
       <div class="row">
 
         <div class="col-lg-3">
           <div class="sideBar">
-            <p>details</p>
-            <p>details</p>
-            <p>details</p>
-            <p>details</p>
-            <p>details</p>
-            <p>details</p>
-            <p>details</p>
-            <p>details</p>
-            <p>details</p>
-            <p>details</p>
-            <p>details</p>
-            <p>details</p>
+            
+            
+            <p>Applicants</p>
+
+            <select name="filter" id="filter">
+              <option value="" disabled selected>Filter by</option>
+              <option value="strName" class="filterName">Name</option>
+              <option value="Position" class="filterPosition">Position</option>
+            </select>
             
           </div>
         </div>
 
-        <div class="col-lg-9 appBox">
           <div class="appDetails">
-          
-            <div class="row">
+            <?php
+              $arrFields = array(
+                "strFirstName", 
+                "strLastName",
+                "strEmail",
+                "strPosition",
+                "arrSeason",
+                "arrHours",
+                "strImage"
+              );
+        
+              $sql  = "SELECT
+              applicants.id,
+              applicants.strFirstName,
+              applicants.strLastName,
+              applicants.strEmail,
+              applicants.strPosition,
+              applicants.arrSeasons,
+              applicants.arrHours
+              FROM applicants";
 
-            <div class="col-lg-12">
-              <?php
-                $arrFields = array(
-                  "strFirstName", 
-                  "strLastName",
-                  "strEmail",
-                  "strPosition",
-                  "arrSeason",
-                  "arrHours",
-                  "strImage"
-                );
-
-
-                if(!isset($_POST['sort'])){
-                  $sql  = "SELECT * FROM applicants";
-                }
-              // }else{
-              //   $sortTable = ($_GET['sort'])?$_GET['sort']:'strEmail';
-              //   $sql  = "SELECT * FROM applicants ORDER BY ".$sortTable;
-              // }
-
-              
               Functions::showData($sql, $arrFields);
-            ?>
 
-           
-            </div>
-          </div>
-        </div>
-      </div>
+
+              if(!isset($_POST['sort'])){
+
+                $sql  = "SELECT * FROM applicants ORDER BY strName";
+              }else{
+                $sortTable = ($_GET['sort'])?$_GET['sort']:'strEmail';
+                $sql  = "SELECT * FROM customers ORDER BY ".$sortTable;
+              }
+            ?>
+        
+          </div><!-- end applicant deatils -->
 
         </div>
       </div> <!-- end of main row -->
