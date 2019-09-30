@@ -1,0 +1,46 @@
+// base
+@import 'base/variables';
+@import 'base/mixins';
+
+// components
+@import 'components/header';
+@import 'components/heroanimation';
+@import 'components/animations';
+
+body {
+  background: transparent;
+  font-family: 'Quicksand', sans-serif;
+  color: $black;
+  width: 100%;
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1.25px;
+    font-weight: 700;
+    color: $green;
+    font-size: 50px;
+  }
+
+  p {
+    font-family: 'Quicksand', sans-serif;
+    color: $black;
+    font-size: 22px;
+  }
+
+  .mainBTN {
+    background: $green;
+    color: $white;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    &:hover{
+      background: $grey;
+      color: $green;
+      
+    }
+  }
+
+  #imgPrev {
+    max-width: 150px;
+    opacity: 0;
+  }
+
+}

@@ -1,0 +1,98 @@
+.test {
+  color: red;
+}
+@media only screen and (max-width: 768px) {
+  .test {
+    color: green;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .test {
+    color: blue;
+  }
+}
+
+.hero {
+  background: url("../assets/forestbg.jpg") no-repeat;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero .header img {
+  max-width: 100%;
+}
+.hero .header .mainNav {
+  margin: 2rem;
+}
+.hero .header .heroText {
+  z-index: 99;
+  padding: 6rem;
+  z-index: 2;
+}
+.hero .header .heroText h1 {
+  margin-bottom: 3rem;
+}
+.hero .zipliner {
+  max-width: 20%;
+  animation: diagonal 4s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+  position: absolute;
+  top: 150px;
+  right: -550px;
+}
+.hero .zipline {
+  position: absolute;
+  bottom: 16.5rem;
+  right: -13rem;
+  width: 58rem;
+}
+
+@keyframes diagonal {
+  0% {
+    top: 90px;
+    right: -550px;
+  }
+  100% {
+    right: 750px;
+    top: 280px;
+  }
+}
+body {
+  background: transparent;
+  font-family: "Quicksand", sans-serif;
+  color: #000;
+  width: 100%;
+}
+body h1 {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1.25px;
+  font-weight: 700;
+  color: #295944;
+  font-size: 50px;
+}
+body p {
+  font-family: "Quicksand", sans-serif;
+  color: #000;
+  font-size: 22px;
+}
+body .mainBTN {
+  background: #295944;
+  color: #fff;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+}
+body .mainBTN:hover {
+  background: #f2f2f2;
+  color: #295944;
+}
+body #imgPrev {
+  max-width: 150px;
+  opacity: 0;
+}
+
+/*# sourceMappingURL=main.css.map */
