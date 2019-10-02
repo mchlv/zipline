@@ -38,7 +38,7 @@
   $statement->execute();
 
 
-  Functions::insertData($sql);
+  // Functions::insertData($sql);
 
-  header("location: index.php?success=savedApplication");
+  header("location: thanksApp.php");
 ?>

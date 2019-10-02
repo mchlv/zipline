@@ -1,0 +1,38 @@
+.about { 
+  justify-content: center;
+  margin: 0 auto;
+  margin: 8rem;
+  @include sm {
+    margin: 2rem;
+  }
+  .aboutTxt {
+    padding: 4rem;
+    background: $gropacity;
+    border-radius: 3rem;
+    margin: 2rem;
+    padding: 2rem;
+    h2 {
+      color: $white;
+      padding-top: 4rem;
+      padding-left: 4rem;
+    }
+    p {
+      padding: 4rem;
+      color: $white;
+      @include sm {
+        font-size: $smallfont;
+      }
+    }
+    }
+  .aboutImg {
+    
+    img {
+      max-width: 100%;
+      @include sm {
+        max-width: 100%;
+      }
+
+    }
+  }
+  }
+

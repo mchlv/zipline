@@ -1,18 +1,5 @@
-.test {
-  color: red;
-}
-@media only screen and (max-width: 768px) {
-  .test {
-    color: green;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .test {
-    color: blue;
-  }
-}
-
 .hero {
+  margin: 0;
   background: url("../assets/forestbg.jpg") no-repeat;
   height: 100vh;
   background-repeat: no-repeat;
@@ -22,51 +9,232 @@
   position: relative;
   overflow: hidden;
 }
-.hero .header img {
-  max-width: 100%;
+@media (max-width: 576px) {
+  .hero .cutout {
+    display: none;
+  }
 }
-.hero .header .mainNav {
-  margin: 2rem;
+@media (max-width: 768px) {
+  .hero .cutout {
+    display: none;
+  }
 }
-.hero .header .heroText {
-  z-index: 99;
-  padding: 6rem;
+.hero .cutout img {
+  width: 100%;
+  position: absolute;
   z-index: 2;
 }
+@media (max-width: 576px) {
+  .hero .cutout img {
+    display: none;
+  }
+}
+.hero .header {
+  z-index: 6;
+}
+.hero .header .heroText {
+  width: 90%;
+  padding: 6rem;
+  z-index: 2;
+  animation: bottomappear 1s;
+}
+@media (max-width: 576px) {
+  .hero .header .heroText {
+    background: #f2f2f2;
+    border-radius: 5rem;
+  }
+}
 .hero .header .heroText h1 {
+  margin-top: 5rem;
   margin-bottom: 3rem;
 }
 .hero .zipliner {
+  max-width: 35%;
+  animation: diagonal 4s;
+  position: absolute;
+  top: 120px;
+  right: -550px;
+}
+@media (max-width: 576px) {
+  .hero .zipliner {
+    display: none;
+  }
+}
+.hero .zipliner2 {
   max-width: 20%;
   animation: diagonal 4s;
-  animation-fill-mode: forwards;
-  animation-delay: 1s;
+  animation-delay: 2s;
   position: absolute;
-  top: 150px;
+  top: 120px;
   right: -550px;
+}
+.hero .zipliner3 {
+  max-width: 48%;
+  animation: diagonal 4s;
+  animation-delay: 4s;
+  position: absolute;
+  top: 120px;
+  right: -950px;
+}
+@media (max-width: 576px) {
+  .hero .zipliner3 {
+    display: none;
+  }
+}
+.hero .zipliner4 {
+  max-width: 48%;
+  animation: lastdiagonal 3s;
+  animation-delay: 6s;
+  animation-fill-mode: forwards;
+  position: absolute;
+  top: 120px;
+  right: -950px;
+}
+@media (max-width: 576px) {
+  .hero .zipliner4 {
+    display: none;
+  }
 }
 .hero .zipline {
   position: absolute;
-  bottom: 16.5rem;
-  right: -13rem;
-  width: 58rem;
+  bottom: 5.5rem;
+  right: -20rem;
+  width: 90rem;
+}
+@media (max-width: 576px) {
+  .hero .zipline {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .hero .zipline {
+    display: none;
+  }
 }
 
 @keyframes diagonal {
   0% {
-    top: 90px;
+    top: 275px;
     right: -550px;
   }
   100% {
-    right: 750px;
-    top: 280px;
+    right: 1200px;
+    top: 575px;
   }
 }
-body {
+@keyframes lastdiagonal {
+  0% {
+    top: 275px;
+    right: -550px;
+  }
+  100% {
+    right: 300px;
+    top: 430px;
+  }
+}
+@keyframes bottomappear {
+  0% {
+    -webkit-transform: translateY(50px);
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.about {
+  justify-content: center;
+  margin: 0 auto;
+  margin: 8rem;
+}
+@media (max-width: 576px) {
+  .about {
+    margin: 2rem;
+  }
+}
+.about .aboutTxt {
+  padding: 4rem;
+  background: rgba(41, 89, 68, 0.8);
+  border-radius: 3rem;
+  margin: 2rem;
+  padding: 2rem;
+}
+.about .aboutTxt h2 {
+  color: #fff;
+  padding-top: 4rem;
+  padding-left: 4rem;
+}
+.about .aboutTxt p {
+  padding: 4rem;
+  color: #fff;
+}
+@media (max-width: 576px) {
+  .about .aboutTxt p {
+    font-size: 16px;
+  }
+}
+.about .aboutImg img {
+  max-width: 100%;
+}
+@media (max-width: 576px) {
+  .about .aboutImg img {
+    max-width: 100%;
+  }
+}
+
+.benefits {
+  justify-content: center;
+  margin: 2rem;
+  padding: 5rem;
+  color: #f2f2f2;
+  background: rgba(41, 89, 68, 0.8);
+  text-align: center;
+}
+.benefits p {
+  font-size: 16px;
+  color: #f2f2f2;
+  text-align: left;
+}
+.benefits i {
+  font-size: 3rem;
+}
+
+.international {
+  margin-top: 6rem;
+  text-align: center;
+  padding: 5rem;
+}
+.international img {
+  max-width: 75%;
+}
+.international p {
+  margin: 2rem;
+  font-weight: bold;
+  font-size: 16px;
+  width: 80%;
+  background: rgba(41, 89, 68, 0.8);
+  color: #f2f2f2;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  text-align: left;
+}
+.international h2 {
+  margin-bottom: 3rem;
+}
+
+* {
   background: transparent;
+  box-sizing: border-box;
+}
+
+body {
   font-family: "Quicksand", sans-serif;
   color: #000;
   width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 body h1 {
   font-family: "Montserrat", sans-serif;
@@ -75,6 +243,13 @@ body h1 {
   color: #295944;
   font-size: 50px;
 }
+body h2 {
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1.25px;
+  font-weight: 700;
+  color: #295944;
+  font-size: 30px;
+}
 body p {
   font-family: "Quicksand", sans-serif;
   color: #000;
@@ -82,17 +257,33 @@ body p {
 }
 body .mainBTN {
   background: #295944;
+  border-radius: 0.5rem;
   color: #fff;
   font-family: "Quicksand", sans-serif;
   font-weight: 700;
 }
 body .mainBTN:hover {
-  background: #f2f2f2;
+  background: #fff;
   color: #295944;
 }
+body .secondBTN {
+  border-radius: 0.5rem;
+  color: #f2f2f2;
+  background: #f2f2f2;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 700;
+  color: #295944;
+}
+body .secondBTN:hover {
+  color: #295944;
+  background: #fff;
+}
 body #imgPrev {
-  max-width: 150px;
-  opacity: 0;
+  max-width: 50%;
+  max-width: 50%;
+}
+body footer {
+  margin-top: 6rem;
 }
 
 /*# sourceMappingURL=main.css.map */

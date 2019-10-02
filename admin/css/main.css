@@ -1,0 +1,149 @@
+.loginWrapper {
+  background: url(../../assets/bg.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.loginWrapper .loginBox {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 75px;
+}
+.loginWrapper .loginBox .login {
+  margin: 0 auto;
+  background: rgba(41, 89, 68, 0.8);
+  margin-top: 170px;
+  padding: 10px;
+}
+.loginWrapper .loginBox .login article {
+  padding: 40px;
+  width: 80%;
+  margin: 0 auto;
+}
+.loginWrapper .loginBox .login article h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  color: white;
+}
+.loginWrapper .loginBox .login article p {
+  color: white;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 20px 0px;
+}
+.loginWrapper .loginBox .login article form input[type=text],
+.loginWrapper .loginBox .login article form input[type=password] {
+  font-size: 14px;
+  color: #295944;
+  border-radius: 10px;
+  border: none;
+  background: #eee;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.loginWrapper .loginBox .login article form input[type=submit] {
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 10px;
+  border: none;
+  background: #295944;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.loginSideBar {
+  background: #295944;
+  margin-top: 170px;
+}
+.loginSideBar article {
+  padding: 50px;
+}
+.loginSideBar article p {
+  font-size: 14px;
+  color: white;
+  margin-top: 25px;
+}
+.loginSideBar article h1 {
+  color: white;
+  margin: 20px;
+}
+.loginSideBar article ul {
+  margin-top: 100px;
+  color: white;
+}
+.loginSideBar article ul li {
+  color: white;
+  list-style: none;
+  font-size: 15px;
+  margin: 10px;
+}
+.loginSideBar article ul li p {
+  font-size: 14px;
+  color: white;
+  margin-top: 25px;
+}
+.loginSideBar .sbHead {
+  text-align: center;
+}
+
+.info {
+  margin: 2rem;
+  width: 150%;
+}
+.info .appName a {
+  color: black;
+}
+.info .appName i {
+  color: #295944;
+}
+.info .appName i:hover {
+  box-shadow: 2px 2px 2px grey;
+}
+
+.sideBar {
+  height: 100vh;
+  background: #f2f2f2;
+  color: black;
+  padding: 8rem;
+}
+.sideBar h1 {
+  color: #000;
+}
+.sideBar a {
+  color: #000;
+}
+.sideBar i {
+  font-size: 3rem;
+}
+
+.displayApplicant {
+  padding: 2rem;
+}
+.displayApplicant h1 {
+  margin: 2rem;
+  font-size: 1.75rem;
+}
+.displayApplicant .panel-group .info {
+  background: #f2f2f2;
+  width: 90%;
+  padding: 1rem;
+}
+.displayApplicant .panel-group .appName h2 {
+  font-size: 1rem;
+}
+.displayApplicant .panel-group .icons {
+  font-size: 1.25rem;
+}
+.displayApplicant #info {
+  padding-left: 2rem;
+  margin: 0.75rem;
+}
+.displayApplicant .pager {
+  margin: 2rem;
+}
+
+/*# sourceMappingURL=main.css.map */

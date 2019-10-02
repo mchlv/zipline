@@ -1,0 +1,108 @@
+.hero {
+  margin: 0;
+  background: url("../assets/forestbg.jpg") no-repeat;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+  // cutout overaly image
+
+  .cutout {
+    @include sm {
+      display: none;
+    }
+    @include md {
+      display: none;
+    }
+    img {
+      width: 100%;
+      position: absolute;
+      z-index: 2;
+      @include sm {
+        display: none;
+      }
+    }
+  }
+
+  .header {
+    z-index: 6;
+    .heroText {
+      @include sm {
+        background: $grey;
+        border-radius: 5rem;
+      }
+      width: 90%;
+      padding: 6rem;
+      z-index: 2;
+      animation: bottomappear 1s;
+      h1 {
+        margin-top: 5rem;
+        margin-bottom: 3rem;;
+      }
+      
+    }
+  }
+
+  .zipliner {
+      max-width: 35%;
+      animation: diagonal 4s;
+      position: absolute;
+      top: 120px;
+      right: -550px;
+      @include sm {
+        display: none;
+      }
+  }
+
+  .zipliner2 {
+    max-width: 20%;
+    animation: diagonal 4s;
+    animation-delay: 2s;
+    position: absolute;
+    top: 120px;
+    right: -550px;
+}
+
+  .zipliner3 {
+    max-width: 48%;
+    animation: diagonal 4s;
+    animation-delay: 4s;
+    position: absolute;
+    top: 120px;
+    right: -950px;
+    @include sm {
+      display: none;
+    }
+  }
+
+  .zipliner4 {
+    max-width: 48%;
+    animation: lastdiagonal 3s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+    position: absolute;
+    top: 120px;
+    right: -950px;
+    @include sm {
+      display: none;
+    }
+  }
+
+  .zipline {
+    position: absolute;
+    bottom: 5.5rem;
+    right: -20rem;
+    width: 90rem;
+    @include sm {
+      display: none;
+    }
+    @include md {
+      display: none;
+    }
+    }
+   
+}
+

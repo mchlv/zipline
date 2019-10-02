@@ -1,11 +1,10 @@
 <?php
-// include("verifyLogin.php"); //  starts session once logged in
 include("../Classes/Db.php");
 include("../Classes/Functions.php");
 if (isset($_GET["success"]))
 {
   ?>
-  <p class="successMsg alert alert-primary" role="alert">Hey, welcome back!</p>
+  <p class="alert alert-primary" role="alert">Hey, welcome back!</p>
   <?php
 }
 ?>
@@ -26,68 +25,96 @@ if (isset($_GET["success"]))
 
 <script src="js/filter.js"></script>
   
-  <link rel="stylesheet" href="../css/main.css"> <!-- compiled css -->
+  <link rel="stylesheet" href="css/main.css"> <!-- compiled css -->
 </head>
-<body class="dash">
+<body>
   <div class="mainContainer">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-lg-3">
+    <div class="container-fluid">
+      <div class="row no-gutters">
+        <div class="col-lg-4 col-md-2 col-sm-1">
           <div class="sideBar">
-            
-            
+          <img src="../assets/logo.svg" alt="" height="70" width="70">
+          <br><br><br>
+            <p>There are</p>
+            <h2>2</h2>
             <p>Applicants</p>
-
+            <br>
             <select name="filter" id="filter">
               <option value="" disabled selected>Filter by</option>
               <option value="strName" class="filterName">Name</option>
               <option value="Position" class="filterPosition">Position</option>
             </select>
+            <br> <br> <br> <br><br> <br><br> <br><br> <br>
+
+            <?php
+
+              $con = Database::con();
             
+                $orderByField = (isset($_GET['orderByField'])) ? $_GET['orderByField'] : "strName"; // we will 
+
+                $strNameSorted = ($orderByField == "strName")?"sorted":"";
+                $strEmailSorted = ($orderByField == "strEmail")?"sorted":"";
+              
+              
+
+
+            ?>
+
+            
+            <a href="logout.php">Logout</a>
           </div>
         </div>
 
-          <div class="appDetails">
-            <?php
-              $arrFields = array(
-                "strFirstName", 
-                "strLastName",
-                "strEmail",
-                "strPosition",
-                "arrSeason",
-                "arrHours",
-                "strImage"
-              );
-        
-              $sql  = "SELECT
-              applicants.id,
-              applicants.strFirstName,
-              applicants.strLastName,
-              applicants.strEmail,
-              applicants.strPosition,
-              applicants.arrSeasons,
-              applicants.arrHours
-              FROM applicants";
-
-              Functions::showData($sql, $arrFields);
 
 
-              if(!isset($_POST['sort'])){
+       
+          <div class="displayApplicant col-lg-8 col-md-12 col-sm-12">
+          <h1>Applicants</h1>
 
-                $sql  = "SELECT * FROM applicants ORDER BY strName";
-              }else{
-                $sortTable = ($_GET['sort'])?$_GET['sort']:'strEmail';
-                $sql  = "SELECT * FROM customers ORDER BY ".$sortTable;
-              }
-            ?>
-        
-          </div><!-- end applicant deatils -->
+
+                <?php
+                  $arrFields = array(
+                    "strFirstName", 
+                    "strLastName",
+                    "strEmail",
+                    "strPosition",
+                    "arrSeason",
+                    "arrHours",
+                    "strImage"
+                  );
+            
+                  $sql  = "SELECT
+                  applicants.id,
+                  applicants.strFirstName,
+                  applicants.strLastName,
+                  applicants.strEmail,
+                  applicants.strPosition,
+                  applicants.arrSeasons,
+                  applicants.arrHours,
+                  applicants.strImage
+                  FROM applicants";
+
+                  Functions::showData($sql, $arrFields);
+                ?>
+
+          <nav aria-label="Page navigation" class="pager">
+            <ul class="pagination">
+              <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+          </nav>
+       
+        </div>
+
 
         </div>
       </div> <!-- end of main row -->
   </div> <!-- end of main container -->
 
+  
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> <!-- bootstrap -->
 </body>

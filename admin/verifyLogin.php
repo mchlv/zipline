@@ -1,6 +1,4 @@
 <?php
-  session_start();
-
   include("../Classes/Db.php");
   include("../Classes/Functions.php");
 

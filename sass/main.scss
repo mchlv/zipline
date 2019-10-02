@@ -4,20 +4,37 @@
 
 // components
 @import 'components/header';
-@import 'components/heroanimation';
+@import 'components/hero';
 @import 'components/animations';
+@import 'components/about';
+@import 'components/benefits';
+@import 'components/international';
+
+* {
+  background: transparent;
+  box-sizing: border-box;
+}
+
 
 body {
-  background: transparent;
   font-family: 'Quicksand', sans-serif;
   color: $black;
   width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
   h1 {
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 1.25px;
     font-weight: 700;
     color: $green;
     font-size: 50px;
+  }
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 1.25px;
+    font-weight: 700;
+    color: $green;
+    font-size: 30px;
   }
 
   p {
@@ -28,19 +45,37 @@ body {
 
   .mainBTN {
     background: $green;
+    border-radius: .5rem;
     color: $white;
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     &:hover{
-      background: $grey;
+      background: $white;
       color: $green;
-      
+      }
+    }
+
+    .secondBTN {
+      border-radius: .5rem;
+      color: $grey;
+      background: $grey;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      color: $green;
+      &:hover{
+        color: $green;
+        background: $white;
     }
   }
 
   #imgPrev {
-    max-width: 150px;
-    opacity: 0;
+    max-width: 50%;
+    max-width: 50%;
+   
+  }
+  
+  footer {
+    margin-top: 6rem;
   }
 
 }

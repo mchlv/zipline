@@ -1,0 +1,162 @@
+// base
+@import 'base/variables';
+@import 'base/mixins';
+
+.loginWrapper {
+  background: url(../../assets/bg.jpg);
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  .loginBox {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 75px;
+    .login {
+      margin: 0 auto;
+      background: $gropacity;
+      margin-top: 170px;
+      padding: 10px;
+      article {
+        padding: 40px;
+        width: 80%;
+        margin: 0 auto;
+        h1 {
+          font-family: "Roboto", sans-serif;
+          font-weight: bold;
+          color: white;
+        }
+        p {
+          color: white;
+          font-size: 14px;
+          line-height: 22px;
+          padding: 20px 0px;
+        }
+        form input[type="text"],
+        form input[type="password"] {
+          font-size: 14px;
+          color: $green;
+          border-radius: 10px;
+          border: none;
+          background: #eee;
+          padding: 10px;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        form input[type="submit"] {
+          font-size: 14px;
+          color: #fff;
+          text-transform: uppercase;
+          border-radius: 10px;
+          border: none;
+          background: $green;
+          padding: 10px;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+// login box
+
+.loginSideBar {
+  background: $green;
+  margin-top: 170px;
+  article {
+    padding: 50px;
+    p {
+      font-size: 14px;
+      color: white;
+      margin-top: 25px;
+    }
+    h1 {
+      color: white;
+      margin: 20px;
+    }
+    ul {
+      margin-top: 100px;
+      color: white;
+      li {
+        color: white;
+        list-style: none;
+        font-size: 15px;
+        margin: 10px;
+        p {
+          font-size: 14px;
+          color: white;
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+  .sbHead {
+    text-align: center;
+  }
+}
+
+
+.info {
+  margin: 2rem;
+  width: 150%;
+  .appName {
+    a {
+      color: black;
+    }
+    i {
+      color: $green;
+      &:hover {
+        box-shadow: 2px 2px 2px grey;
+      }
+    }
+  }
+}
+
+.sideBar {
+  height: 100vh;
+  background: $grey;
+  color: black;
+  padding: 8rem;
+  h1 {
+    color: $black;
+  }
+  a {
+    color: $black;
+  }
+  i {
+    font-size: 3rem;
+  }
+}
+
+.displayApplicant {
+  padding: 2rem;
+  h1 {
+   margin: 2rem;
+   font-size: 1.75rem;
+  }
+  .panel-group {
+    .info {
+      background: $grey;
+      width: 90%;
+      padding: 1rem;
+    }
+    .appName {
+      h2 {
+        font-size: 1rem;
+      }
+    }
+    .icons {
+      font-size: 1.25rem;
+    }
+  }
+
+  #info {
+    padding-left: 2rem;
+    margin: .75rem;
+  }
+
+  .pager {
+    margin: 2rem;
+  }
+}

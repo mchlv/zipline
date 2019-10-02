@@ -1,0 +1,23 @@
+.international {
+  margin-top: 6rem;
+  text-align: center;
+  padding: 5rem;
+  img {
+    max-width: 75%;
+  }
+  p {
+    margin: 2rem;
+    font-weight: bold;
+    font-size: $smallfont;
+    width: 80%;
+    background: $gropacity;
+    color: $grey;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    text-align: left;
+  }
+
+  h2 {
+    margin-bottom: 3rem;
+  }
+}

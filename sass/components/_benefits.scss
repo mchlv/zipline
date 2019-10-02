@@ -1,0 +1,16 @@
+.benefits {
+  justify-content: center;
+  margin: 2rem;
+  padding: 5rem;
+  color: $grey;
+  background: $gropacity;
+  text-align: center;
+  p {
+    font-size: $smallfont;
+    color: $grey;
+    text-align: left;
+  }
+  i {
+    font-size: 3rem;
+  }
+}

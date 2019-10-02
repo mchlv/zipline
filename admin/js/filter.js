@@ -7,5 +7,7 @@ $(function () {
   }
   );
 
+  $('.toast').toast(option)
+
   
 });

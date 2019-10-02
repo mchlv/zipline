@@ -10,10 +10,10 @@ Class Database
 
   public static function con()
   {
-    // $ini = parse_ini_file("../../config.ini");
-    // $connect = mysqli_connect($ini["host"], $ini["user"], $ini["pass"], $ini["db"]); use when uploading to server
+    $ini = parse_ini_file("../../../config.ini");
+    $con = mysqli_connect($ini["host"], $ini["username"], $ini["password"], $ini["database"]);
 
-    $con = mysqli_connect("localhost", "root", "", "zipline");
+    // $con = mysqli_connect("localhost", "root", "", "zipline");
     return $con;
 
     $oDatabase = new Database($con);
